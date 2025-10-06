@@ -114,7 +114,6 @@
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 0 30px rgba(41, 128, 185, 0.6));
-            mix-blend-mode: screen;
             background: transparent;
         }
 
@@ -134,6 +133,12 @@
             text-align: center;
             animation: fadeIn 1.5s ease-out 0.3s both;
             padding: 0 1rem;
+            /* Added flex centering for perfect alignment */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         /* Applied Beroda font to h1 */
@@ -149,6 +154,12 @@
             background-clip: text;
             text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
             word-break: break-word;
+            /* Added width and centering for perfect alignment */
+            width: 100%;
+            text-align: center;
+            display: block;
+            position: relative;
+            left: 0.15em;
         }
 
         .subtitle {
@@ -157,6 +168,10 @@
             letter-spacing: clamp(0.15rem, 0.5vw, 0.3rem);
             color: rgba(255, 255, 255, 0.6);
             text-transform: lowercase;
+            /* Added width and centering for perfect alignment */
+            width: 100%;
+            text-align: center;
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -172,6 +187,10 @@
         .button-container {
             margin-top: clamp(2rem, 5vh, 3rem);
             animation: fadeInUp 1.5s ease-out 0.6s both;
+            /* Added flex centering for button */
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
         .telegram-button {
@@ -249,6 +268,10 @@
             z-index: 2;
             animation: fadeIn 2s ease-out 1s both;
             padding: 0 1rem;
+            /* Added flex centering for footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Enhanced responsive breakpoints for better mobile experience */
@@ -380,16 +403,12 @@
     <!-- Main wrapper -->
     <div id="wrapper">
         <!-- Logo/Animation -->
-        <!-- Replaced img with video element for webm file -->
+        <!-- Replaced video element with img for WebP image -->
         <div class="logo-container">
-            <video 
-                src="images/output.webm" 
-                class="logo-animation"
-                autoplay 
-                loop 
-                muted 
-                playsinline>
-            </video>
+            <img 
+                src="images/output3.webp" 
+                alt="AZART Dice"
+                class="logo-animation">
         </div>
 
         <!-- Header -->
