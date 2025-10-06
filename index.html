@@ -63,7 +63,7 @@
 
         .particle {
             position: absolute;
-            /* <CHANGE> Fixed particles to start from bottom of screen */
+            /* Fixed particles to start from bottom of screen */
             top: 100vh;
             width: 2px;
             height: 2px;
@@ -72,7 +72,7 @@
             animation: float linear infinite;
         }
 
-        /* <CHANGE> Updated animation to move particles from bottom to top smoothly */
+        /* Updated animation to move particles from bottom to top smoothly */
         @keyframes float {
             0% {
                 transform: translateY(0) translateX(0);
@@ -108,12 +108,14 @@
             animation: fadeInDown 1s ease-out;
         }
 
-        /* Updated logo animation size for better display */
+        /* Added mix-blend-mode and filter to remove black background from video */
         .logo-animation {
             width: clamp(200px, 40vw, 400px);
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 0 30px rgba(41, 128, 185, 0.6));
+            mix-blend-mode: screen;
+            background: transparent;
         }
 
         @keyframes fadeInDown {
@@ -291,6 +293,8 @@
             }
 
             .telegram-button {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.85rem;
                 min-width: 160px;
                 gap: 0.5rem;
             }
@@ -376,7 +380,7 @@
     <!-- Main wrapper -->
     <div id="wrapper">
         <!-- Logo/Animation -->
-        <!-- <CHANGE> Replaced img with video element for webm file -->
+        <!-- Replaced img with video element for webm file -->
         <div class="logo-container">
             <video 
                 src="images/output.webm" 
@@ -420,7 +424,7 @@
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 7 + 7) + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particle.style.animationDelay = Math.random() * 5 + 's';
             particlesContainer.appendChild(particle);
         }
