@@ -63,6 +63,8 @@
 
         .particle {
             position: absolute;
+            /* <CHANGE> Fixed particles to start from bottom of screen */
+            top: 100vh;
             width: 2px;
             height: 2px;
             background: rgba(255, 255, 255, 0.5);
@@ -70,9 +72,10 @@
             animation: float linear infinite;
         }
 
+        /* <CHANGE> Updated animation to move particles from bottom to top smoothly */
         @keyframes float {
             0% {
-                transform: translateY(100vh) translateX(0);
+                transform: translateY(0) translateX(0);
                 opacity: 0;
             }
             10% {
@@ -373,11 +376,16 @@
     <!-- Main wrapper -->
     <div id="wrapper">
         <!-- Logo/Animation -->
-        <!-- Replaced placeholder with actual AZART Racing image -->
+        <!-- <CHANGE> Replaced img with video element for webm file -->
         <div class="logo-container">
-            <img src="images/azart-racing.webp" 
-                 alt="AZART Racing" 
-                 class="logo-animation">
+            <video 
+                src="images/output.webm" 
+                class="logo-animation"
+                autoplay 
+                loop 
+                muted 
+                playsinline>
+            </video>
         </div>
 
         <!-- Header -->
@@ -388,7 +396,7 @@
 
         <!-- Telegram Button -->
         <div class="button-container">
-            <a href="https://t.me/AZARTRACING" class="telegram-button" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/ТВОЙ_НИК" class="telegram-button" target="_blank" rel="noopener noreferrer">
                 <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
                 </svg>
@@ -399,7 +407,7 @@
 
     <!-- Footer -->
     <footer>
-        © 2025 AZART.  All rights reserved.
+        © 2025 AZART. Все права защищены.
     </footer>
 
     <!-- Particles generation script -->
@@ -412,7 +420,7 @@
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDuration = (Math.random() * 7 + 7) + 's';
             particle.style.animationDelay = Math.random() * 5 + 's';
             particlesContainer.appendChild(particle);
         }
